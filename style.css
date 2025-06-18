@@ -7,6 +7,11 @@ body {
   color: white;
 }
 
+input[type="range"] {
+  accent-color: green;
+}
+
+
 .controls {
   margin-bottom: 20px;
 }
