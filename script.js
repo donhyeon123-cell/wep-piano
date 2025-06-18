@@ -2,6 +2,15 @@ const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const sampleMap = {};
 const notes = ['C4', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4', 'C5'];
 
+const fileNameMap = {
+  'C#4': 'C%234',
+  'D#4': 'D%234',
+  'F#4': 'F%234',
+  'G#4': 'G%234',
+  'A#4': 'A%234'
+};
+
+
 const bass = audioCtx.createBiquadFilter();
 bass.type = "lowshelf";
 bass.frequency.value = 200;
@@ -24,7 +33,8 @@ treble.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
 async function loadSample(note) {
-  const response = await fetch(`sample/${encodeURIComponent(note)}.mp3`);
+  const mappedName = fileNameMap[note] || note;  // 매핑 없으면 원래 이름 사용
+  const response = await fetch(`${mappedName}.mp3`);
   if (!response.ok) {
     throw new Error(`파일을 불러오지 못했습니다: ${note}`);
   }
