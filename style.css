@@ -1,0 +1,88 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  background: url('image/piano.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.equalizer {
+  margin-bottom: 20px;
+}
+
+.equalizer label {
+  margin: 0 10px;
+  color: white;
+}
+
+.piano {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.white-keys {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.white-key {
+  width: 60px;
+  height: 200px;
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  font-size: 14px;
+  color: black; 
+}
+
+.white-key:active {
+  background-color: #ddd;
+}
+
+.black-keys {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  z-index: 2;
+}
+
+.black-key {
+  position: absolute;
+  width: 40px;
+  height: 120px;
+  background-color: black;
+  cursor: pointer;
+  pointer-events: auto;
+  color: white; /* 필요시 텍스트 표시할 경우 대비 */
+}
+
+.black-key:active {
+  background-color: #ffffff;
+}
+
+.black-key.skip {
+  display: none;
+}
+
+/* 검은 건반 위치 조정 */
+.black-keys .black-key:nth-child(1) { left: 45px; }
+.black-keys .black-key:nth-child(2) { left: 105px; }
+.black-keys .black-key:nth-child(3) { display: none; }
+.black-keys .black-key:nth-child(4) { left: 225px; }
+.black-keys .black-key:nth-child(5) { left: 285px; }
+.black-keys .black-key:nth-child(6) { left: 345px; }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title> 웹 피아노 </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Web Piano</h1>
+
+  <div class="equalizer">
+    <label>Bass</label>
+    <input type="range" id="bass" min="-30" max="30" value="0">
+    <label>Mid</label>
+    <input type="range" id="mid" min="-30" max="30" value="0">
+    <label>Treble</label>
+    <input type="range" id="treble" min="-30" max="30" value="0">
+  </div>
+
+  <div class="piano">
+    <div class="white-keys">
+      <div class="white-key">도</div>
+      <div class="white-key">레</div>
+      <div class="white-key">미</div>
+      <div class="white-key">파</div>
+      <div class="white-key">솔</div>
+      <div class="white-key">리</div>
+      <div class="white-key">시</div>
+      <div class="white-key">도</div>
+    </div>
+    <div class="black-keys">
+      <div class="black-key"></div>
+      <div class="black-key"></div>
+      <div class="black-key skip"></div>
+      <div class="black-key"></div>
+      <div class="black-key"></div>
+      <div class="black-key"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
